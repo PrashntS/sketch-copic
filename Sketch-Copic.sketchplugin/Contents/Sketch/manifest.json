@@ -1,0 +1,23 @@
+{
+  "author" : "Prashant Sinha",
+  "commands" : [
+    {
+      "script" : "script.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "",
+      "name" : "Copic Colors",
+      "identifier" : "helloworld"
+    },
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      "helloworld",
+    ],
+  },
+  "identifier" : "in.prshnts.sketch.copic",
+  "version" : "1.0",
+  "description" : "Copic Color Library for Sketch 3.",
+  "authorEmail" : "prashant@ducic.ac.in",
+  "name" : "Copic Color Library"
+}
