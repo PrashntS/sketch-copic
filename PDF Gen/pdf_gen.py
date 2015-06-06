@@ -12,7 +12,7 @@ DWG = None
 def draw_color(ID, column, row):
     global DWG
     offsets = {
-        "insert": (row  * 50, (column) * 30),
+        "insert": (row  * 50, (column) * 25),
         "insert_text": (row * 50, (column) * 30 + 35),
         "size": (50, 25)
     }
@@ -48,10 +48,17 @@ def end ():
 
 def main():
     init()
-    draw_color("r46", 0, 0)
-    draw_color("110", 0, 1)
-    draw_color("g82", 10, 10)
-    #draw_color("b0000", 1, 0)
+    row = 0
+    column = 0
+    for i in COLOR_LIB:
+        draw_color(i, row, column)
+        row += 1
+        if row % 10 is 0:
+            row = 0
+            column += 1
+
+        if column == 3:
+            break
     end()
 
 if __name__ == "__main__":
