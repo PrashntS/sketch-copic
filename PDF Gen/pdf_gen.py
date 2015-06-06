@@ -12,8 +12,8 @@ DWG = None
 def draw_color(ID, column, row):
     global DWG
     offsets = {
-        "insert": (row  * 50, (column) * 25),
-        "insert_text": (row * 50, (column) * 30 + 35),
+        "insert": (row  * 60, column * 45),
+        "insert_text": (row * 60, (column + 1) * 45 - 10),
         "size": (50, 25)
     }
 
@@ -26,7 +26,7 @@ def draw_color(ID, column, row):
     text = DWG.text(
         ID,
         insert = offsets["insert_text"],
-        style  = "font-size: 12px; font-family: P22UndergroundProDemi;",
+        style  = "font-size: 12px; font-family: P22UndergroundProDemi; line-height: 12px",
         fill   = COLOR_LIB[ID]
     )
 
@@ -53,12 +53,10 @@ def main():
     for i in COLOR_LIB:
         draw_color(i, row, column)
         row += 1
-        if row % 10 is 0:
+        if row % 15 is 0:
             row = 0
             column += 1
 
-        if column == 3:
-            break
     end()
 
 if __name__ == "__main__":
