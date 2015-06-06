@@ -50,14 +50,19 @@ def main():
     init()
     row = 0
     column = 0
-    lCOLOR_LIB = sorted(COLOR_LIB)
-    for i in lCOLOR_LIB:
-        #print (int(COLOR_LIB[i], 16))
-        draw_color(i, row, column)
-        row += 1
-        if row % 15 is 0:
+    prev_char = None
+    for i in sorted(COLOR_LIB):
+        if prev_char is None:
+            prev_char = i[0]
+        if prev_char is not i[0]:
+            row = 0
+            column += 2
+            prev_char = i[0]
+        if row == 15:
             row = 0
             column += 1
+        draw_color(i, row, column)
+        row += 1
 
     end()
 
